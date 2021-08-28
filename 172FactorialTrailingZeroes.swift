@@ -13,3 +13,16 @@ Explanation: 5! = 120, one trailing zero.
 Input: n = 0
 Output: 0
 */
+
+
+class Solution {
+    func trailingZeroes(_ n: Int) -> Int {
+        var zeroCount = 0
+        var multiplicator = 5
+        while n / multiplicator >= 1 {
+            zeroCount += n / multiplicator
+            multiplicator *= 5
+        }
+        return zeroCount
+    }
+}
